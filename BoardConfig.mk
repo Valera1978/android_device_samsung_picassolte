@@ -16,11 +16,11 @@
 # inherit from common msm8974
 include device/samsung/msm8974-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/mondrianwifi
+LOCAL_PATH := device/samsung/mondrianlte
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-TARGET_OTA_ASSERT_DEVICE := mondrianwifi,mondrianwifixx
+TARGET_OTA_ASSERT_DEVICE := mondrianlte,mondrianltexx
 
 # WITH_TWRP := true
 
@@ -83,6 +83,10 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_POWERHAL_SET_INTERACTIVE_EXT := $(LOCAL_PATH)/power/power_ext.c
 TARGET_POWERHAL_VARIANT := qcom
 
+# Radio
+BOARD_PROVIDES_LIBRIL := true
+TARGET_RIL_VARIANT := caf
+
 # Security patch level - P905XXUABPE2
 VENDOR_SECURITY_PATCH := 2016-05-01
 
@@ -123,4 +127,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/samsung/mondrianwifi/BoardConfigVendor.mk
+-include vendor/samsung/mondrianlte/BoardConfigVendor.mk

@@ -16,7 +16,7 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),mondrianwifi)
+ifeq ($(TARGET_DEVICE),mondrianlte)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 
 endif

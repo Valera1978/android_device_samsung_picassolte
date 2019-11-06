@@ -13,7 +13,7 @@ Copyright (C) 2019 Valera Chigir <valera1978@tut.by>
 
 * Description
 
-  This repository is for LineageOS on Samsung Tab Pro 8.4 (mondrianwifi)
+  This repository is for LineageOS on Samsung Tab Pro 8.4 (mondrianlte)
 
 * How To Build LineageOS for Samsung Tab Pro 8.4
 
@@ -31,9 +31,9 @@ repo init -u git://github.com/LineageOS/android.git -b cm-16.0
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Valera1978/android_device_samsung_mondrianwifi" path="device/samsung/mondrianwifi" remote="github" />
+  <project name="Valera1978/android_device_samsung_mondrianlte" path="device/samsung/mondrianlte" remote="github" />
   <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974_tab" remote="github" revision="lineage-16.0_pro" />
-  <project name="Valera1978/android_vendor_samsung_mondrianwifi" path="vendor/samsung/mondrianwifi" remote="github" />
+  <project name="Valera1978/android_vendor_samsung_mondrianlte" path="vendor/samsung/mondrianlte" remote="github" />
   <project name="LineageOS/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" />
   <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
   <project name="Valera1978/android_hardware_samsung" path="hardware/samsung" remote="github" />
@@ -58,10 +58,10 @@ repo sync
 
   - Build cm16
 
-brunch mondrianwifi
+brunch mondrianlte
 
 or another way:
 
-lunch lineage_mondrianwifi-userdebug
+lunch lineage_mondrianlte-userdebug
 export USE_CCACHE=1
 make -j16 bacon

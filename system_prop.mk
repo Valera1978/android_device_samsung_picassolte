@@ -67,6 +67,23 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.timed.enable=true \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
+# Radio
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.qmi.adb_logmask=0 \
+    persist.radio.add_power_save=1 \
+    rild.libpath=/system/vendor/lib/libsec-ril.so \
+    ro.telephony.mms_data_profile=5 \
+    ro.ril.telephony.qan_resp_strings=6
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.default_network=9 \
+    telephony.lteOnGsmDevice=1
+
+# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.telephony.call_ring.multiple=0
+
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.sensors=1
@@ -74,10 +91,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
-
-# radio
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.radio.noril=yes
 
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \

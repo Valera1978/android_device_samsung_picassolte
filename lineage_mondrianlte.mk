@@ -14,20 +14,20 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mondrianwifi device
-$(call inherit-product, device/samsung/mondrianwifi/device.mk)
+# Inherit from mondrianlte device
+$(call inherit-product, device/samsung/mondrianlte/device.mk)
 
 # Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := lineage_mondrianwifi
-PRODUCT_DEVICE := mondrianwifi
+PRODUCT_NAME := lineage_mondrianlte
+PRODUCT_DEVICE := mondrianlte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-T320
+PRODUCT_MODEL := SM-T325
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 

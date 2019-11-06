@@ -1,1 +1,1 @@
-add_lunch_combo lineage_mondrianwifi-userdebug
+add_lunch_combo lineage_mondrianlte-userdebug
