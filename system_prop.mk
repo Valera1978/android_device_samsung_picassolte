@@ -24,6 +24,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.dedicated.device.for.voip=true \
     vendor.voice.path.for.pcm.voip=false
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    audio.offload.gapless.enabled=false \
+    av.offload.enable=true
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera2.portability.force_api=1
@@ -49,11 +53,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
+    debug.sf.hw=1 \
+    debug.mdpcomp.logs=0 \
+    persist.hwc.mdpcomp.enable=true \
     ro.hdcp2.rx=tz \
     ro.qualcomm.cabl=1 \
     ro.secwvk=144 \
     ro.sf.lcd_density=320 \
     debug.hwui.use_buffer_age=false \
+    ro.opengles.version=196608 \
     debug.sf.enable_gl_backpressure=1
 
 # GPS
@@ -76,25 +84,17 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.extension_library=/vendor/lib/libqti-perfd-client.so
 
 # Radio
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    persist.data.netmgrd.qos.enable=true \
-#    persist.data.qmi.adb_logmask=0 \
-#    persist.radio.add_power_save=1 \
-#    rild.libpath=/system/vendor/lib/libsec-ril.so \
-#    ro.telephony.mms_data_profile=5 \
-#    ro.ril.telephony.qan_resp_strings=6
-
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.telephony.default_network=9 \
-#    telephony.lteOnGsmDevice=1
-
-# Ril sends only one RIL_UNSOL_CALL_RING, so set call_ring.multiple to false
-#PRODUCT_PROPERTY_OVERRIDES += \
-#    ro.telephony.call_ring.multiple=0
-
-# radio
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.radio.noril=yes
+    persist.data.netmgrd.qos.enable=true \
+    persist.data.qmi.adb_logmask=0 \
+    persist.qcril.disable_retry=true \
+    rild.libpath=/system/vendor/lib/libril-qc-qmi-1.so \
+    ro.use_data_netmgrd=true \
+    persist.radio.apm_sim_not_pwdn=1 \
+    persist.telephony.oosisdc=false \
+    ril.subscription.types=NV,RUIM \
+    ro.ril.telephony.mqanelements=5 \
+    ro.telephony.default_network=9
 
 # Sensors
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -107,3 +107,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
     wifi.interface=wlan0
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.timed.enable=true
