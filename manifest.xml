@@ -268,7 +268,7 @@
             <instance>default</instance>
         </interface>
     </hal>
-<!--    <hal format="hidl">
+    <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
         <version>1.1</version>
@@ -289,5 +289,5 @@
             <name>IOemHook</name>
             <instance>slot1</instance>
         </interface>
-    </hal> -->
+    </hal>
 </manifest>
