@@ -95,7 +95,12 @@ PRODUCT_COPY_FILES += \
 
 # Radio
 PRODUCT_PACKAGES += \
-    libsecnativefeature
+    libsecnativefeature \
+    libcnefeatureconfig \
+    librmnetctl
+
+PRODUCT_PACKAGES += \
+    libshim_binder
 
 # Ramdisk
 PRODUCT_PACKAGES += \
