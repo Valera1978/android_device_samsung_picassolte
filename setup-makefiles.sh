@@ -18,8 +18,8 @@
 
 set -e
 
-export DEVICE=mondrianlte
-export DEVICE_COMMON=mondrianlte
+export DEVICE=picassolte
+export DEVICE_COMMON=picassolte
 export VENDOR=samsung
 
 export INITIAL_COPYRIGHT_YEAR=2014
@@ -41,7 +41,7 @@ fi
 setup_vendor "$DEVICE_COMMON" "$VENDOR" "$CM_ROOT" true
 
 # Copyright headers and common guards
-write_headers "mondrianlte"
+write_headers "picassolte"
 
 write_makefiles "$MY_DIR"/common-proprietary-files.txt
 

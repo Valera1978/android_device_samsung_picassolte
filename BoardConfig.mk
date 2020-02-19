@@ -16,11 +16,11 @@
 # inherit from common msm8974
 include device/samsung/msm8974-common/BoardConfigCommon.mk
 
-LOCAL_PATH := device/samsung/mondrianlte
+LOCAL_PATH := device/samsung/picassolte
 
 TARGET_SPECIFIC_HEADER_PATH := $(LOCAL_PATH)/include
 
-TARGET_OTA_ASSERT_DEVICE := mondrianlte,mondrianltexx
+TARGET_OTA_ASSERT_DEVICE := picassolte,picassoltexx
 
 # WITH_TWRP := true
 
@@ -28,10 +28,10 @@ TARGET_OTA_ASSERT_DEVICE := mondrianlte,mondrianltexx
 USE_CUSTOM_AUDIO_POLICY := 1
 
 # Bluetooth
-BLUETOOTH_HCI_USE_MCT := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
-BOARD_HAVE_BLUETOOTH_QCOM := true
-QCOM_BT_USE_SMD_TTY := true
+BOARD_CUSTOM_BT_CONFIG := $(LOCAL_PATH)/bluetooth/vnd_picassolte.txt
+BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_HAVE_SAMSUNG_BLUETOOTH := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := MSM8974
@@ -53,7 +53,7 @@ BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x02900000 --tags_offset 0x02700000
 BOARD_CUSTOM_BOOTIMG := true
 BOARD_CUSTOM_BOOTIMG_MK := hardware/samsung/mkbootimg.mk
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-androideabi-
-TARGET_KERNEL_CONFIG := lineage_mondrian_defconfig
+TARGET_KERNEL_CONFIG := lineage_picassolte_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/msm8974_tab
 
 # Init
@@ -114,19 +114,19 @@ endif
 #TARGET_USE_SDCLANG := true
 
 # Wifi
-BOARD_HAS_QCOM_WLAN := true
-BOARD_WLAN_DEVICE := qcwcn
+BOARD_HAVE_SAMSUNG_WIFI := true
+BOARD_WLAN_DEVICE := bcmdhd
 BOARD_HOSTAPD_DRIVER := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
-PRODUCT_VENDOR_MOVE_ENABLED := true
-TARGET_USES_WCNSS_CTRL := true
-TARGET_DISABLE_WCNSS_CONFIG_COPY := true
-TARGET_USES_QCOM_WCNSS_QMI := true
-WIFI_DRIVER_FW_PATH_AP := "ap"
-WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
+WIFI_BAND := 802_11_ABG
+WIFI_DRIVER_MODULE_ARG      := "firmware_path=/vendor/etc/wifi/bcmdhd_sta.bin nvram_path=/vendor/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_MODULE_AP_ARG   := "firmware_path=/vendor/etc/wifi/bcmdhd_apsta.bin nvram_path=/vendor/etc/wifi/nvram_net.txt"
+WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/dhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA     := "/vendor/etc/wifi/bcmdhd_sta.bin"
+WIFI_DRIVER_FW_PATH_AP      := "/vendor/etc/wifi/bcmdhd_apsta.bin"
 
 # inherit from the proprietary version
--include vendor/samsung/mondrianlte/BoardConfigVendor.mk
+-include vendor/samsung/picassolte/BoardConfigVendor.mk

@@ -16,18 +16,18 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mondrianlte device
-$(call inherit-product, device/samsung/mondrianlte/device.mk)
+# Inherit from picassolte device
+$(call inherit-product, device/samsung/picassolte/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := lineage_mondrianlte
-PRODUCT_DEVICE := mondrianlte
+PRODUCT_NAME := lineage_picassolte
+PRODUCT_DEVICE := picassolte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-T325
+PRODUCT_MODEL := SM-T525
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 

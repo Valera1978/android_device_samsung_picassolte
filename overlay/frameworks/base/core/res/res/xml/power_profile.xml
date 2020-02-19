@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <device name="Android">
     <item name="none">0</item>
-    <item name="screen.on">58</item>
-    <item name="bluetooth.active">98</item>
-    <item name="bluetooth.on">0.4</item>
-    <item name="screen.full">228</item>
-    <item name="wifi.on">0.5</item>
-    <item name="wifi.active">187</item>
-    <item name="wifi.scan">114</item>
-    <item name="dsp.audio">40</item>
-    <item name="dsp.video">251</item>
-    <item name="radio.active">155</item>
-    <item name="radio.scanning">25</item>
-    <item name="gps.on">0.3</item>
+    <item name="screen.on">71</item>
+    <item name="bluetooth.active">17</item>
+    <item name="bluetooth.on">0.3</item>
+    <item name="screen.full">380</item>
+    <item name="wifi.on">0.3</item>
+    <item name="wifi.active">96</item>
+    <item name="wifi.scan">70</item>
+    <item name="dsp.audio">44</item>
+    <item name="dsp.video">280</item>
+    <item name="radio.active">250</item>
+    <item name="radio.scanning">82</item>
+    <item name="gps.on">1</item>
     <array name="radio.on">
-        <value>5.4</value>
-        <value>5.4</value>
+        <value>3.4</value>
+        <value>3.4</value>
     </array>
     <item name="cpu.clusters.cores">4</item>
     <array name="cpu.core_speeds.cluster0">
@@ -51,5 +51,5 @@
         <value>74</value>
         <value>56</value>
     </array>
-    <item name="battery.capacity">4800</item>
+    <item name="battery.capacity">8220</item>
 </device>
