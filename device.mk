@@ -107,8 +107,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc \
-    init.input.sh
+    ueventd.qcom.rc
 
 # Thermal
 PRODUCT_COPY_FILES += \
