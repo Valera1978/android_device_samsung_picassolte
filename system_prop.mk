@@ -34,12 +34,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Display
 PRODUCT_PROPERTY_OVERRIDES += \
-    debug.hwui.use_buffer_age=false \
-    persist.hwc.mdpcomp.enable=true \
-    persist.hwc.ptor.enable=true \
-    persist.metadata_dynfps.disable=true \
-    ro.opengles.version=196608 \
-    ro.sf.lcd_density=320
+    ro.hdcp2.rx=tz \
+    ro.qualcomm.cabl=1 \
+    ro.secwvk=144 \
+    ro.sf.lcd_density=320 \
+    debug.hwui.use_buffer_age=false
 
 PRODUCT_PROPERTY_OVERRIDES += \
     lockscreen.rot_override=true
