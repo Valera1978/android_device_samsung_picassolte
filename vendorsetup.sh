@@ -1,1 +1,2 @@
-add_lunch_combo lineage_picassolte-userdebug
+add_lunch_combo omni_picassolte-eng
+add_lunch_combo omni_picassolte-userdebug
