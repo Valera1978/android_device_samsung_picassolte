@@ -18,7 +18,7 @@
 
 # Board specific SELinux policy variable definitions
 #BOARD_SEPOLICY_DIRS += \
-#    device/samsung/mondrianlte/sepolicy/common
+#    device/samsung/picassolte/sepolicy/common
 
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/mondrianlte/sepolicy/common_tmp
+    device/samsung/picassolte/sepolicy/common_tmp

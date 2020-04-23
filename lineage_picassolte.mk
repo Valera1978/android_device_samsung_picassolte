@@ -16,25 +16,25 @@
 #$(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit from mondrianlte device
-$(call inherit-product, device/samsung/mondrianlte/device.mk)
+# Inherit from picassolte device
+$(call inherit-product, device/samsung/picassolte/device.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := lineage_mondrianlte
-PRODUCT_DEVICE := mondrianlte
+PRODUCT_NAME := lineage_picassolte
+PRODUCT_DEVICE := picassolte
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung
-PRODUCT_MODEL := SM-T325
+PRODUCT_MODEL := SM-T525
 
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="mondrianltexx-user 4.4.2 KOT49H T325XXU1BQB2 release-keys"
+    PRIVATE_BUILD_DESC="picassoltexx-user 5.0.2 LRX22G P905XXUABPE2 release-keys"
 
 # Set BUILD_FINGERPRINT variable to be picked up by both system and vendor build.prop
-BUILD_FINGERPRINT := samsung/mondrianltexx/mondrianlte:4.4.2/KOT49H/T325XXU1BQB2:user/release-keys
+BUILD_FINGERPRINT := samsung/picassoltexx/picassolte:5.0.2/LRX22G/P905XXUABPE2:user/release-keys
 
 TARGET_VENDOR := Samsung

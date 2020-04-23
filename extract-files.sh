@@ -18,8 +18,8 @@
 
 set -e
 
-export DEVICE=mondrianlte
-export DEVICE_COMMON=mondrianlte
+export DEVICE=picassolte
+export DEVICE_COMMON=picassolte
 export VENDOR=samsung
 
 # Load extract_utils and do some sanity checks

@@ -28,9 +28,13 @@
 
 static const char *names[] = {
     "sec_touchscreen", // 3
-    "light_sensor" // 5
-    "proximity_sensor" // 6
-    "gpio-keys" // 7
+    "sec_e-pen" // 4
+    "accelerometer_sensor" // 6
+    "gyro_sensor" // 7
+    "magnetic_sensor" // 8
+    "light_sensor" // 9
+    "grip_sensor" // 10
+    "gpio-keys" // 11
 };
 #define N_NAMES (sizeof(names) / sizeof(names[0]))
 static char paths[N_NAMES][MAX_PATH_SIZE];

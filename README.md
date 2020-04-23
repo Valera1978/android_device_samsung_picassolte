@@ -1,6 +1,6 @@
-Device configuration for the Samsung Tab Pro 8.4
+Device configuration for the Samsung Galaxy Tab Pro 10.1
 
-Copyright (C) 2019 The LineageOS Project
+Copyright (C) 2017 The LineageOS Project
 Copyright (C) 2019 Valera Chigir <valera1978@tut.by>
 
  Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,29 +13,27 @@ Copyright (C) 2019 Valera Chigir <valera1978@tut.by>
 
 * Description
 
-  This repository is for LineageOS on Samsung Tab Pro 8.4 (mondrianlte)
+  This repository is for LineageOS on Samsung Galaxy Tab Pro 10.1 (picassolte)
 
-* How To Build LineageOS for Samsung Tab Pro 8.4
+* How To Build LineageOS for Samsung Galaxy Tab Pro 10.1
 
   - Make a workspace
 
-mkdir cm16
-cd cm16
+mkdir cm17
+cd cm17
 
   - Do repo init & sync
 
-repo init -u git://github.com/LineageOS/android.git -b cm-16.0
+repo init -u git://github.com/LineageOS/android.git -b cm-17.0
 
   - Create .repo/local_manifests/roomservice.xml with the following content:
 
 ```
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <project name="Valera1978/android_device_samsung_mondrianlte" path="device/samsung/mondrianlte" remote="github" />
-  <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974_tab" remote="github" revision="lineage-16.0_pro" />
-  <project name="Valera1978/android_vendor_samsung_mondrianlte" path="vendor/samsung/mondrianlte" remote="github" />
-  <project name="LineageOS/android_device_samsung_msm8974-common" path="device/samsung/msm8974-common" remote="github" />
-  <project name="LineageOS/android_device_samsung_qcom-common" path="device/samsung/qcom-common" remote="github" />
+  <project name="Valera1978/android_device_samsung_picassolte" path="device/samsung/picassolte" remote="github" />
+  <project name="Valera1978/android_kernel_samsung_msm8974" path="kernel/samsung/msm8974" remote="github" />
+  <project name="Valera1978/android_vendor_samsung_picassolte" path="vendor/samsung/picassolte" remote="github" />
   <project name="Valera1978/android_hardware_samsung" path="hardware/samsung" remote="github" />
 </manifest>
 ```
@@ -56,12 +54,16 @@ repo sync
 
 . build/envsetup.sh
 
-  - Build cm16
+  - fixes for build (repopick)
 
-brunch mondrianlte
+. picks.sh
+
+  - Build cm17
+
+brunch picassolte
 
 or another way:
 
-lunch lineage_mondrianlte-userdebug
+lunch lineage_picassolte-userdebug
 export USE_CCACHE=1
 make -j16 bacon

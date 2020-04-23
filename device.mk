@@ -18,7 +18,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 # Get non-open-source specific aspects
-$(call inherit-product-if-exists, vendor/samsung/mondrianlte/mondrianlte-vendor.mk)
+$(call inherit-product-if-exists, vendor/samsung/picassolte/picassolte-vendor.mk)
 
 # We are a tablet, not a phone
 PRODUCT_CHARACTERISTICS := tablet
@@ -34,7 +34,7 @@ PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
 # Boot animation
 TARGET_SCREEN_WIDTH := 2560
-TARGET_SCREEN_HEIGHT := 1600
+TARGET_SCREEN_HEIGHT := 1440
 TARGET_BOOTANIMATION_HALF_RES := true
 
 # Permissions
@@ -247,6 +247,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service.basic
 
+# Wifi
+PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service.legacy \
+    hostapd \
+    wificond \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 # Misc dependency packages
 PRODUCT_PACKAGES += \
     libbson \
@@ -265,9 +273,7 @@ PRODUCT_PACKAGES += \
     fstab.qcom \
     init.qcom.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc \
-    init.qcom.bt.sh \
-    init.input.sh
+    ueventd.qcom.rc
 
 # Thermal
 PRODUCT_COPY_FILES += \
@@ -282,25 +288,12 @@ PRODUCT_PACKAGES += \
 
 # Wifi
 PRODUCT_PACKAGES += \
-    android.hardware.wifi@1.0-service.legacy \
-    dhcpcd.conf \
-    libwpa_client \
-    hostapd \
-    wpa_supplicant \
-    wpa_supplicant.conf \
-
-PRODUCT_PACKAGES += \
-    libwcnss_qmi \
-    wcnss_service
+    libnetcmdiface \
+    macloader
 
 PRODUCT_COPY_FILES += \
    $(LOCAL_PATH)/configs/wpa_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/wpa_supplicant_overlay.conf \
    $(LOCAL_PATH)/configs/p2p_supplicant_overlay.conf:$(TARGET_COPY_OUT_VENDOR)/etc/wifi/p2p_supplicant_overlay.conf
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
-    $(LOCAL_PATH)/wifi/WCNSS_cfg.dat:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_cfg.dat \
-    $(LOCAL_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
 
 # sensors
 PRODUCT_COPY_FILES += \

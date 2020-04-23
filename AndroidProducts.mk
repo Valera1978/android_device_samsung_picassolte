@@ -14,7 +14,7 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_mondrianlte.mk
+    $(LOCAL_DIR)/lineage_picassolte.mk
 
 COMMON_LUNCH_CHOICES := \
-    lineage_mondrianlte-userdebug
+    lineage_picassolte-userdebug
